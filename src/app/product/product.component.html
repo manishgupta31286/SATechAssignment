@@ -1,0 +1,16 @@
+<!-- Display products if filteredProducts array has items -->
+<div *ngIf="products && products.length > 0" class="product-list">
+	<ul>
+		<li *ngFor="let product of products" class="product-item">
+			<h3>{{ product.name }}</h3>
+			<p>Price: {{ product.price }}</p>
+			<!-- <p>{{ product.description }}</p> -->
+			<p><button (click)="AddToCart(product)">Add to cart</button></p>
+		</li>
+	</ul>
+</div>
+
+<!-- Display message if filteredProducts is empty or undefined -->
+<div *ngIf="!products || products.length === 0" class="no-products">
+	<p>No products found.</p>
+</div>

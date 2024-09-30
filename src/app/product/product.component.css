@@ -1,0 +1,16 @@
+.product-list ul {
+	margin-top: 20px;
+	list-style-type: none;
+}
+
+.product-item {
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	background-color: #f9f9f9;
+}
+
+.no-products {
+	margin-top: 20px;
+	color: #999;
+}

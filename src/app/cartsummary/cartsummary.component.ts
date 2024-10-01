@@ -24,7 +24,7 @@ export class CartsummaryComponent implements OnInit {
     });
   }
 
-  Remove(productId: number): void {
+  Update(productId: number, quantity: number): void {
 
     let cartId = localStorage.getItem('cartId');
     if (!cartId) {
@@ -33,7 +33,7 @@ export class CartsummaryComponent implements OnInit {
     let cart: Cart = {
       cartid: cartId,
       productId: productId,
-      quantity: -1
+      quantity: quantity
     };
     this.repo.Add(cart).subscribe(data => {
       console.log(data);

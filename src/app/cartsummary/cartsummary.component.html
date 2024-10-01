@@ -5,13 +5,15 @@
 				<th scope="col">Product Name</th>
 				<th scope="col">Quantity</th>
 				<th scope="col"></th>
+				<th scope="col"></th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr *ngFor="let item of cartItems">
 				<td>{{ item.productName }}</td>
 				<td>{{ item.quantity }}</td>
-				<td><button class="btn-primary" (click)="Remove(item.productId)">-</button></td>
+				<td><button class="btn-primary" (click)="Update(item.productId,1)">+</button></td>
+				<td><button class="btn-primary" (click)="Update(item.productId,-1)">-</button></td>
 			</tr>
 		</tbody>
 	</table>

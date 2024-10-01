@@ -13,10 +13,8 @@ export class NavigationComponent implements OnInit {
   constructor(private repo: CategoryRepository) { }
 
   ngOnInit(): void {
-    this.repo.GetCustomer().subscribe(data => {
-      //this.categories = data;
-      debugger;
-      console.log(data);
+    this.repo.GetAll().subscribe(data => {
+      this.categories = data;
     });
   }
 }

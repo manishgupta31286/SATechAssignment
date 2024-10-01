@@ -1,8 +1,20 @@
 <div *ngIf="cartItems && cartItems.length > 0">
-	<div *ngFor="let item of cartItems">
-		<div>{{ item.productName }}</div>
-		<div>Quantity: {{ item.quantity }}</div>
-	</div>
+	<table>
+		<thead>
+			<tr>
+				<th scope="col">Product Name</th>
+				<th scope="col">Quantity</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let item of cartItems">
+				<td>{{ item.productName }}</td>
+				<td>{{ item.quantity }}</td>
+				<td><button class="btn-primary" (click)="Remove(item.productId)">-</button></td>
+			</tr>
+		</tbody>
+	</table>
 </div>
 <div *ngIf="cartItems && cartItems.length === 0">
 	<p>Your cart is empty</p>
